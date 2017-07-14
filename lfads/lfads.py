@@ -773,8 +773,8 @@ class LFADS(object):
     self.nll_bound_vae = tf.constant(0.0)
     self.nll_bound_iwae = tf.constant(0.0) # for eval with IWAE cost.
     if kind in ["train", "posterior_sample_and_average"]:
-      kl_cost_g0_b = 0.0
-      kl_cost_co_b = 0.0
+      kl_cost_g0_b = tf.zeros_like(batch_size, dtype=tf.float32)
+      kl_cost_co_b = tf.zeros_like(batch_size, dtype=tf.float32)
       if ic_dim > 0:
         g0_priors = [self.prior_zs_g0]
         g0_posts = [self.posterior_zs_g0]

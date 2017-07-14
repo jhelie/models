@@ -1888,7 +1888,6 @@ class LFADS(object):
 
     var_names = vars_dict.keys()
     nested_vars_dict = {}
-    current_dict = nested_vars_dict
     for v, var_name in enumerate(var_names):
       var_split_name_list = var_name.split('/')
       split_name_list_len = len(var_split_name_list)
